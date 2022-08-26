@@ -54,14 +54,22 @@ console.log(summedPrice)
 */
 
 //CODE HERE
-let tax = .06
-let coupon = 5
-const calcFinalPrice = summedPrice.map(cartTotal + couponValue => {
-    cartTotal => (total.price*(1+tax))
-    couponValue => (total.price-(coupon))
-})
+const applyTax = (summedPrice, tax) => summedPrice * (1- tax)
 
-console.log(calcFinalPrice)
+const applyCoupon = (applyTax, coupon) => applyTax - coupon
+
+
+applyTax(summedPrice, .06)
+console.log(applyTax)
+
+applyCoupon(applyTax, 5.00)
+console.log(applyCoupon)
+
+
+const calcFinalPrice = (applyTax, applyCoupon) => applyTax - applyCoupon
+console.log (calcFinalPrice)
+
+
 
 //////////////////PROBLEM 3////////////////////
 /*  

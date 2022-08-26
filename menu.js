@@ -97,7 +97,7 @@ console.log(category)
 //CODE HERE
 
 const foodArr = [
-    {
+    {   
         name: 'calamari',
         price: '10.00',
         category: 'appetizer',

@@ -19,19 +19,23 @@
         - rating (number)
         - tags (array of strings)
 
-    Make sure that you give your properties values
-    of the correct data type.
+    Make sure that you give your properties values of the correct data type.
 
-    Note: the category is something like appetizer/entree,
-    the popularity is an overall ranking, the
-    rating is an average of all customer ratings, and
-    for the tags, think of things that a
-    user might filter by, like 'gluten-free' or
-    'kids'
+    Note: the category is something like appetizer/entree, the popularity is an overall ranking, the
+    rating is an average of all customer ratings, and for the tags, think of things that a
+    user might filter by, like 'gluten-free' or 'kids'
 */
 
 //CODE HERE
+let pizza = {
+    name: 'pizza',
+    price: '5.00',
+    category: 'entree',
+    popularity: '5',
+    rating: '4',
+    tags: ['gluten-free', 'kids']
 
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +47,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +57,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +67,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -74,6 +79,8 @@
 
 //CODE HERE
 
+let{category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,8 +96,50 @@
 
 //CODE HERE
 
+const foodArr = [
+    {
+        name: 'calamari',
+        price: '10.00',
+        category: 'appetizer',
+        popularity: '4',
+        rating: '5',
+        tags: ['seafood', 'share']
+    },
+    {
+        name: 'pasta',
+        price: '6.00',
+        category: 'entree',
+        popularity: '2',
+        rating: '3',
+        tags: ['kids', 'dairy-free']
+    },
+    {
+        name: 'ice cream',
+        price: '3.00',
+        category: 'dessert',
+        popularity: '5',
+        rating: '5',
+        tags: ['kids', 'gluten-free', 'share']
+    },
+    {
+        name: 'salad',
+        price: '5.00',
+        category: 'appetizer',
+        popularity: '1',
+        rating: '2',
+        tags: ['gluten-free', 'share']
+    },
+    {
+        name: 'chocolate cake',
+        price: '8.00',
+        category: 'dessert',
+        popularity: '5',
+        rating: '4',
+        tags: ['kids', 'share']
+    }
+]
 
-
+console.log(foodArr)
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -105,45 +154,32 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+let {tags} = foodArr
+const filteredFood = foodArr.filter(tag => tag === ['share'])
+
+console.log(filteredFood)
 
 
 
 //////////////////PROBLEM 5////////////////////
 /* 
-    Now let's write a function that's a little
-    more flexible than just filtering for one
-    value. We want to be able to filter for 
-    food that has above a certain rating, 
-    below a certain price, or any other combo.
+    Now let's write a function that's a little more flexible than just filtering for one value. We want to be able to filter for food that has above a certain rating, below a certain price, or any other combo.
 
-    Write a function called `filterByProperty`
-    that takes in three arguments: `property`, 
-    `number`, and `type. 
+    Write a function called `filterByProperty`that takes in three arguments: `property`, `number`, and `type. 
 
-    The property will be a string (rating,
-    popularity, or price)
+    The property will be a string (rating, popularity, or price)
 
-    The number will be the number that you want
-    to compare against 
+    The number will be the number that you want to compare against 
 
-    The type should be 'above' or 'below' to 
-    indicate whether you want to get foods with
-    values that are above or below the given number
-    for the given property
+    The type should be 'above' or 'below' to indicate whether you want to get foods with values that are above or below the given number for the given property
 
-    Inside the function, create a variable to hold
-    a filtered array
+    Inside the function, create a variable to hold a filtered array
 
     Use the filter method to filter the foodArr
 
-        In the callback, check if the `type` is `above`, 
-        if it is, return objects whose value for the given
-        property is greater than the `number` passed in
+        In the callback, check if the `type` is `above`, if it is, return objects whose value for the given property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
-        value for the given property is less than the 
-        `number` passed in
+        If the type isn't `below`, return objects whose value for the given property is less than the `number` passed in
     
     Return the filtered array from the entire function
 */
@@ -153,7 +189,7 @@
 
 /*
     Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+    in a value for each parameter.
 
     You'll have to console.log to see the filtered array
 */

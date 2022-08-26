@@ -35,9 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((total, current) => total+current.price,0)
 
-
+console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,8 +54,14 @@ const cart = [
 */
 
 //CODE HERE
+let tax = .06
+let coupon = 5
+const calcFinalPrice = summedPrice.map(cartTotal + couponValue => {
+    cartTotal => (total.price*(1+tax))
+    couponValue => (total.price-(coupon))
+})
 
-
+console.log(calcFinalPrice)
 
 //////////////////PROBLEM 3////////////////////
 /*  

@@ -54,20 +54,13 @@ console.log(summedPrice)
 */
 
 //CODE HERE
-const applyTax = (summedPrice, tax) => summedPrice * (1- tax)
 
-const applyCoupon = (applyTax, coupon) => applyTax - coupon
-
-
-applyTax(summedPrice, .06)
-console.log(applyTax)
-
-applyCoupon(applyTax, 5.00)
-console.log(applyCoupon)
-
-
-const calcFinalPrice = (applyTax, applyCoupon) => applyTax - applyCoupon
-console.log (calcFinalPrice)
+const calcFinalPrice = (cartTotal, couponValue, tax) =>{
+    const totalwithTax = cartTotal * (1+tax)
+    const grandTotal = totalwithTax-couponValue
+    return grandTotal
+}
+console.log(calcFinalPrice(summedPrice, 5, .06))
 
 
 
@@ -93,7 +86,9 @@ console.log (calcFinalPrice)
 
 /*
     TEXT ANSWER HERE
-
+first and last name to know who they are, 
+email to send them ads, 
+birthday to send them coupons
 */
 
 /*
@@ -102,3 +97,12 @@ console.log (calcFinalPrice)
 */
 
 //CODE HERE
+
+let customer = {
+    firstName: 'Amber',
+    lastName: 'Harris',
+    email: 'asdf@jkl',
+    birthday: '12/22'
+}
+
+console.log(customer)

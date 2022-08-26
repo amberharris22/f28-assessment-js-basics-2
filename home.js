@@ -53,14 +53,14 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-const canWeDeliver = (arr, zipCode) => {
-    if (arr.includes(zipCode ) === true){
+const canWeDeliver = (zipCode) => {
+    if (deliveryAreaZipCodes.includes(zipCode ) === true){
         return (`You're in our delivery zone!`)
     } else 
     return ("Sorry, we can't deliver to that address")
 }
 
-    console.log(canWeDeliver(deliveryAreaZipCodes, 85200))
+    console.log(canWeDeliver(85200))
 
 /* 
     Problem 2 Continued
@@ -80,16 +80,16 @@ const canWeDeliver = (arr, zipCode) => {
 */
 
 // CODE HERE
-const canWeDeliverTwo = (arr, zipCode) => {
-    for (let i=0; arr.length; i++){
-        if (arr[i] === zipCode){
+const canWeDeliverTwo = (zipCode) => {
+    for (let i=0; deliveryAreaZipCodes.length; i++){
+        if (deliveryAreaZipCodes[i] === zipCode){
             return (`You're in our delivery zone!`)
-    } else 
-    return ("Sorry, we can't deliver to that address")
-        }
+    }
+}
+return ("Sorry, we can't deliver to that address")
     }
 
-    console.log(canWeDeliverTwo(deliveryAreaZipCodes, 85205))
+    console.log(canWeDeliverTwo(85204))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -126,16 +126,9 @@ const deals = [
 
 //CODE HERE
 
-let [title] = deals
-console.log(title)
+deals[0].title = deals[0].title.replace('15% Off!','10% Off!')
 
-const newTitle = title.replace('15% Off!','10% Off!')
-
-console.log(newTitle)
-
-
-// console.log(title.replace('15', '10'))
-
+console.log(deals)
 
 
 /*
@@ -152,3 +145,7 @@ console.log(newTitle)
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+
+console.log(deals)
+

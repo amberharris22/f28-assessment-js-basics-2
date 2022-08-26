@@ -139,7 +139,7 @@ const foodArr = [
     }
 ]
 
-console.log(foodArr)
+// console.log(foodArr)
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -154,8 +154,9 @@ console.log(foodArr)
 
 //CODE HERE
 
-let {tags} = foodArr
-const filteredFood = foodArr.filter(tag => tag === ['share'])
+// let {tags} = foodArr
+const filteredFood = foodArr.filter(food => food.tags.includes('gluten-free'))
+   
 
 console.log(filteredFood)
 
@@ -185,7 +186,16 @@ console.log(filteredFood)
 */
 
 //CODE HERE
-
+const filterByProperty = (property, number, type) => {
+    const filteredFood = foodArr.filter((food) => {
+        if(type === 'above') {
+            return food[property] >= number
+    } else {
+        return food[property] <= number
+    }
+    })
+    return filteredFood
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -195,3 +205,5 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 3, 'below'))
